@@ -14,34 +14,37 @@
         <form action="'/" method="get">
             @csrf
             <a href="{{'/'}}" id="Logo"><h1 id='Logo'>🐛 Escor.fe</h1></a>
-            </form>
+        </form>
         <div class='AreaTexto'>
             <center>
-            <h1 id='Msg-BemVindo'>Central de Cadastro 📖</h1>
+            <h1 id='MsgCadastro'>Cadastro realizado com sucesso!</h1>
+            <h1 id='Msg-BemVindo'>Central de Login ✏️</h1>
             </center>
-            <form action="/cadastro/login" method="post">
-            @csrf
             <h2 class='emoji'>📩</h2>
-            <h2 class='Txt1'>Digite um e-mail valido:</h2>
+            <h2 class='Txt1'>E-mail:</h2>
             <br/>
-            <input name='email' class='btnTxt' placeholder='E-mail'/>
+            <input class='btnTxt' placeholder='E-mail'/>
             <br/>
             <h2 class='emoji'>🔑</h2>
-            <h2 class='Txt2'>Digite uma senha:</h2>
+            <h2 class='Txt2'>Senha:</h2>
             <br/>
-            <input name='senha' class='btnTxt' type='password' placeholder='Senha'/>
+            <input class='btnTxt' type='password' placeholder='Senha'/>
             <h2 class='materia'>Selecione o seu curso:</h2>
             @foreach ($cursos as $cursos)
-            @csrf
-            <input value="{{$cursos->nomecurso}}" name='curso'  class='cursobtn' type="checkbox">
+            <input class='cursobtn' type='checkbox'></input>
             <h3 class='curso'>{{ $cursos->nomecurso }}</h3>
-            </input>
-            <br/>
             @endforeach
             <br/>
-            <a href="{{'/cadastrar'}}"><input class='btnEnvio' type="submit"></input></a>
+            <form action="/presença/{$curso}" method="get">
+            @csrf
+            <input class='btnEnvio' type="submit"></input>
             </form>
             <br/>
-      </div>
+            <p class="Txt1">Não tem uma conta ainda?</p>
+            <form action="/cadastro" method="post">
+            @csrf
+            <a class="btnCadastro" href="{{'/cadastro'}}"> Cadastre-se!</a>
+            </form>
+          </div>
     </body>
 </html>

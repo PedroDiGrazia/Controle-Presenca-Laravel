@@ -8,6 +8,14 @@ body {
     background-color: rgb(72, 72, 72);
   }
   
+  #MsgCadastro{
+    background-color: rgba(91, 255, 85, 0.74);
+    color: rgb(255, 255, 255);
+    width: 600px;
+    padding: 10px;
+    border-radius: 20px;
+  }
+
   #Msg-BemVindo{
     color: white;
   }
@@ -73,7 +81,6 @@ body {
   .cursobtn{
     display: inline-block;
     margin-right: 10px;
-    padding: 50px;
   }
   
   .cursobtn:hover{
@@ -89,6 +96,7 @@ body {
   .curso:hover{
     display: inline-block;
     color:rgba(240, 248, 255, 0.726);
+    cursor: pointer;
   }
   
   .btnEnvio{

@@ -22,12 +22,13 @@
             <h2 class='emoji'>📩</h2>
             <h2 class='Txt1'>E-mail:</h2>
             <br/>
-            <input class='btnTxt' placeholder='E-mail'/>
+            
+            <input name='email' class='btnTxt' placeholder='E-mail'/>
             <br/>
             <h2 class='emoji'>🔑</h2>
             <h2 class='Txt2'>Senha:</h2>
             <br/>
-            <input class='btnTxt' type='password' placeholder='Senha'/>
+            <input name='senha' class='btnTxt' type='password' placeholder='Senha'/>
             <h2 class='materia'>Selecione o seu curso:</h2>
             @foreach ($cursos as $cursos)
             <input class='cursobtn' type='checkbox'></input>
@@ -35,9 +36,12 @@
             <br/>
             @endforeach
             <br/>
+            <form action="/presença/{$curso}" method="get">
+            @csrf
             <input class='btnEnvio' type="submit"></input>
             <br/>
-            <p class="Txt1">Não tem um login ainda?</p>
+            </form>
+            <p class="Txt1">Não tem uma conta ainda?</p>
             <form action="/cadastro" method="post">
             @csrf
             <a class="btnCadastro" href="{{'/cadastro'}}"> Cadastre-se!</a>

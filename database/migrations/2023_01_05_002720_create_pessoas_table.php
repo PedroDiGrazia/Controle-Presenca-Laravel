@@ -17,6 +17,7 @@ class CreatePessoasTable extends Migration
             $table->id();
             $table->string('email', 220);
             $table->string('senha', 220);
+            $table->string('curso', 220);
             $table->timestamps();
         });
     }
