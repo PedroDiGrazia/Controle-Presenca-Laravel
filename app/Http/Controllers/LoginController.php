@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Curso;
 use App\Models\Pessoa;
+use Carbon\Carbon;
 use DB;
 
 class LoginController extends Controller
@@ -15,12 +16,14 @@ class LoginController extends Controller
 
     public function loginpresenca(Request $request){
         $pessoas = Pessoa::all();
-        $pessoas->email = $request->email;
-        $pessoas->senha = $request->senha;
 
-        if($request->email == $pessoas->email & Hash::check($request->senha, $pessoas->senha)){
-            return redirect() -> route('pagina-presenca');    
+        foreach($pessoas as $pessoas)
+        {
+            if($request -> email == $pessoas -> email & Hash::check($request -> senha, $pessoas -> senha)){
+                return redirect() -> route('pagina-presenca');    
+            }
         }
+        return redirect () -> route('curso-login');
     }
 
     public function cursologin(){

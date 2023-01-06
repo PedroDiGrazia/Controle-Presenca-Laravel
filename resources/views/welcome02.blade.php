@@ -35,7 +35,7 @@
             <h3 class='curso'>{{ $cursos->nomecurso }}</h3>
             @endforeach
             <br/>
-            <form action="/presença/{$curso}" method="get">
+            <form action="/presença" method="post">
             @csrf
             <input class='btnEnvio' type="submit"></input>
             </form>

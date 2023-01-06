@@ -22,7 +22,8 @@
             <h2 class='emoji'>📩</h2>
             <h2 class='Txt1'>E-mail:</h2>
             <br/>
-            
+            <form action="/presença" method="post">
+            @csrf
             <input name='email' class='btnTxt' placeholder='E-mail'/>
             <br/>
             <h2 class='emoji'>🔑</h2>
@@ -36,8 +37,6 @@
             <br/>
             @endforeach
             <br/>
-            <form action="/presença/{$curso}" method="get">
-            @csrf
             <input class='btnEnvio' type="submit"></input>
             <br/>
             </form>
