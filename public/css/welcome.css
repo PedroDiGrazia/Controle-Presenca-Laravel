@@ -22,15 +22,17 @@ body {
 
   #Logo{
     color: white;
-    margin-left: 10px;
+    /* margin-left: 10px; */
     text-decoration: none;
     text-shadow: none;
     margin-top: 0px;
+    padding: 0px;
+    display: contents;
   }
 
   #Logo:hover{
     color: rgba(255, 255, 255, 0.572);
-    margin-left: 10px;
+    /* margin-left: 10px; */
     text-decoration: none;
     text-shadow: none;
     margin-top: 0px;
@@ -93,6 +95,14 @@ body {
     color: aliceblue;
   }
   
+  .cursoPresenca{
+    color: white;
+    background-color: rgb(67, 67, 67);
+    width: 350px;
+    border-radius: 20px;
+    padding: 5px;
+  }
+
   .curso:hover{
     display: inline-block;
     color:rgba(240, 248, 255, 0.726);

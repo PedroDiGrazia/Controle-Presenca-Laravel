@@ -11,7 +11,8 @@ use DB;
 class LoginController extends Controller
 {
     public function login(){
-        return view('presenca');
+        $cursos = Curso::find(1);
+        return view('presenca')->with('cursos',$cursos);
     }
 
     public function loginpresenca(Request $request){

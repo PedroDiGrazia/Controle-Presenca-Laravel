@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Escor.fe</title>
 
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -23,23 +23,24 @@
             <h2 class='emoji'>📩</h2>
             <h2 class='Txt1'>E-mail:</h2>
             <br/>
-            <input class='btnTxt' placeholder='E-mail'/>
+            <form action="/presença" method="post">
+            @csrf
+            <input name='email' class='btnTxt' placeholder='E-mail'/>
             <br/>
             <h2 class='emoji'>🔑</h2>
             <h2 class='Txt2'>Senha:</h2>
             <br/>
-            <input class='btnTxt' type='password' placeholder='Senha'/>
+            <input name='senha' class='btnTxt' type='password' placeholder='Senha'/>
             <h2 class='materia'>Selecione o seu curso:</h2>
             @foreach ($cursos as $cursos)
             <input class='cursobtn' type='checkbox'></input>
             <h3 class='curso'>{{ $cursos->nomecurso }}</h3>
+            <br/>
             @endforeach
             <br/>
-            <form action="/presença" method="post">
-            @csrf
-            <input class='btnEnvio' type="submit"></input>
-            </form>
+            <input value="Login" class='btnEnvio' type="submit"></input>
             <br/>
+            </form>
             <p class="Txt1">Não tem uma conta ainda?</p>
             <form action="/cadastro" method="post">
             @csrf
